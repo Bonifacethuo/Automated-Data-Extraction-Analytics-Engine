@@ -3,7 +3,7 @@ import os
 import zipfile
 import re
 
-directory = r"c:\Users\USER\Desktop\China"
+directory = os.path.dirname(os.path.abspath(__file__))
 
 # Read excel
 excel_file = os.path.join(directory, "Exercise 2.2 (1).xlsx")
@@ -34,5 +34,3 @@ for file_name in os.listdir(directory):
                     slide_text = " ".join(text_matches)
                     if "Exercise" in slide_text or "exercise" in slide_text.lower() or "2.2" in slide_text:
                         print(f"  {info.filename} (Potential Exercise Text): {slide_text}")
-        except Exception as e:
-            print(f"Error reading {file_name}: {e}")
