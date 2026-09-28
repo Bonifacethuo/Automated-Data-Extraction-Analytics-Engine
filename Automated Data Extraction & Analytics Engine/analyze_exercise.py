@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-directory = r"c:\Users\USER\Desktop\China"
+directory = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(directory, "output8.txt"), "w", encoding="utf-8") as f:
     f.write("--- Exercise 2.2 ---\n")
