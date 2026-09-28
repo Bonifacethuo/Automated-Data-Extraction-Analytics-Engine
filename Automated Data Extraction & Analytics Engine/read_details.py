@@ -3,7 +3,7 @@ import os
 import zipfile
 import re
 
-directory = r"c:\Users\USER\Desktop\China"
+directory = os.path.dirname(os.path.abspath(__file__))
 
 # Read excel
 excel_file = os.path.join(directory, "Exercise 2.2 (1).xlsx")
@@ -38,3 +38,4 @@ try:
                 print(f"Slide {re.search(r'slide(\d+)', info.filename).group(1)}: {slide_text.strip()}")
 except Exception as e:
     print(f"Error reading pptx: {e}")
+
